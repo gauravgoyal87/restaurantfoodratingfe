@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FoodList from "./FoodList";
 
-const Restaurant = () => {
+const Restaurant = (props) => {
 
     return (
         <div>
@@ -14,8 +14,7 @@ const Restaurant = () => {
             <Link to="/:id/add">
                 <button>Add Menu</button>
             </Link>
-
-            <FoodList />
+            <FoodList restaurants={props.restaurants} />
         </div>
     )
 }
