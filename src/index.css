@@ -4,11 +4,31 @@
   box-sizing: border-box;
 }
 
+#root {
+  height: 100vh;
+}
+
+.App {
+  height: 100%;
+}
+
 /* ---------------------------------- Fonts --------------------------------- */
 
 /* font-family: 'Bungee', cursive; */
 /* font-family: 'Bungee Inline', cursive; */
 /* font-family: 'Sen', sans-serif; */
+
+/* ----------------------------------- App ---------------------------------- */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
+}
 
 /* --------------------------------- Navbar --------------------------------- */
 
