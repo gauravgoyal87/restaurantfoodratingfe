@@ -28,7 +28,6 @@ const FoodList = (props) => {
                 <button>Add New Food</button>
             </Link>
             {foodList}
-            <Food foodList={foodList} />
         </div>
     )
 }
