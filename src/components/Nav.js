@@ -2,16 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
-    return (
-        <div>
-            <Link to="/">
-                <h2>Home</h2>
-            </Link>
-            <Link to="/restaurants">
-                <h2>All Restaurant</h2>
-            </Link>
-        </div>
-    )
-}
+  return (
+    <div className="nav-parent">
+      <Link to="/">
+        <img src="imgs/Logo.png" alt="Blub" />
+      </Link>
+    </div>
+  );
+};
 
-export default Nav
+export default Nav;
