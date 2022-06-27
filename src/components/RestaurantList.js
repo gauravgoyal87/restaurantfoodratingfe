@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const RestaurantList = () => {
+const RestaurantList = (prop) => {
+
+    
+
     return (
         <div>
             <h2>Restaurant List</h2>

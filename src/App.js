@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddFood from './components/AddFood';
@@ -13,6 +14,20 @@ import Restaurant from './components/Restaurant';
 import RestaurantList from './components/RestaurantList';
 
 const App = () => {
+
+  const [rest, setRes] = useState([]);
+  
+  useEffect(() => {
+    fetch('./data.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setRes(data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [])
+
   return (
     <div className="App">
       <h1>Team Spicy</h1>
@@ -20,7 +35,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/"element={<Home />} />
-          <Route path="/restaurants" element={<RestaurantList />} />
+          <Route path="/restaurants" element={<RestaurantList restaurants={rest} />} />
           <Route path="/restaurants/add" element={<AddRestaurant />} />
           <Route path="/:id" element={<Restaurant />} />
           <Route path="/:id/edit" element={<EditRestaurant />} />
