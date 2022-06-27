@@ -14,9 +14,10 @@ const Home = () => {
         .catch(console.error)
     }, [])
     return (
-        <div>
-            <p>I am a landing page</p>
-        </div>
+        console.log(data)
+        // <div>
+        //     <p>I am a landing page</p>
+        // </div>
     )
 }
 
