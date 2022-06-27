@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const RestaurantList = (prop) => {
+const RestaurantList = (props) => {
 
-    
+    let restaurants = props.restaurants.map((item, index) => {
+        return (
+            <Link key={index} to={`/${index}`}>
+                <h4>{item.restaurantName}</h4>
+                <p>{item.location}</p>
+            </Link>
+        )
+    })
 
     return (
         <div>
@@ -11,12 +18,7 @@ const RestaurantList = (prop) => {
             <Link to="/restaurants/add">
                 <button>Add New Restaurant</button>
             </Link>
-            <Link to="/1">
-                <li>Restaurant 1</li>
-            </Link>
-            <Link to="/2">
-                <li>Restaurant 2</li>
-            </Link>
+            {restaurants}
         </div>
     )
 }
