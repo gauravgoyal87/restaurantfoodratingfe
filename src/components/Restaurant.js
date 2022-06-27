@@ -11,9 +11,6 @@ const Restaurant = (props) => {
                 <button>Edit Restaurant</button>
             </Link>
             <button>Delete Restaurant</button>
-            <Link to="/:id/add">
-                <button>Add Menu</button>
-            </Link>
             <FoodList restaurants={props.restaurants} />
         </div>
     )

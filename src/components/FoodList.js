@@ -13,6 +13,10 @@ const FoodList = (props) => {
             <div key={item.price}>
                 <h3>{item.foodName}</h3>
                 <h3>$ {item.price}</h3>
+                <Link to="/:id/:foodId/edit">
+                    <button>Edit Food</button>
+                </Link>
+                <button>Delete Food</button>
             </div>
         )
     })
