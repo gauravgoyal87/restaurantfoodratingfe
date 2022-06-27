@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useNavigate } from "react";
 
 const AddFood = () => {
-
 
     const [form, setForm] = useState({});
 
@@ -44,26 +43,32 @@ const AddFood = () => {
     }
   
       const handleSubmit = () => {
+        // const navigate = useNavigate
+        // const onSubmit = (event) => {
+        //     event.preventDefault()
+        //     const fData = new FormData(event.target)
+        //     const params = {}
+        }
           console.log(form)
-      }
   
       return (
           <div>
-              <h3>Add Restaurant</h3>
-              <form action=''>
+              <h3>Add Food</h3>
+              <form>
                   <input type='text' placeholder='Image' id='image' onChange={handleImage} />
                   <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
                   <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
                   <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
-                  <Link to=':id/foods'>
+                  <Link to=':id/food'>
                       <button onClick={handleSubmit}>Submit</button>
                   </Link>
               </form>
-              <Link to=":id/foods">
+              <Link to=":id/food">
                   <button>Back</button>
               </Link>
           </div>
       )
   }
+
 
 export default AddFood
