@@ -30,7 +30,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Team Spicy</h1>
       <Nav />
       <main>
         <Routes>
