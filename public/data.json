@@ -1,0 +1,30 @@
+{
+    "Mala House": [
+        {
+            "foodName": "Dry HotPot",
+            "price": 15,
+            "image": "",
+            "review": "Spicy"
+        },
+        {
+            "foodName": "Orange Chicken",
+            "price": 12,
+            "image": "",
+            "review": "Sweet"
+        }
+    ],
+    "Chipotle": [
+        {
+            "foodName": "Buritto",
+            "price": 15,
+            "image": "",
+            "review": "Pricy"
+        },
+        {
+            "foodName": "Taco",
+            "price": 14,
+            "image": "",
+            "review": "Very gooood"
+        }
+    ]
+}
