@@ -70,9 +70,21 @@
   gap: 3rem;
 }
 
+.home-parent a{
+  text-decoration: none;
+}
+
 .home-parent :nth-child(1) {
   /* border: #e53535 dotted 2px; */
   font-family: bungee;
+  /* font-size: 3rem; */
+}
+
+.home-p1 {
+  font-size: 3rem;
+}
+
+.home-write{
   font-size: 3rem;
 }
 
@@ -93,7 +105,7 @@
   bottom: 20px;
 }
 
-.home-parent button {
+.home-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,3 +119,4 @@
   font-family: bungee;
   font-size: 1.2rem;
 }
+
