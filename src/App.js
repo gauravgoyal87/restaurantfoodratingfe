@@ -52,7 +52,7 @@ const App = () => {
           <Route path="/"element={<Home />} />
           <Route path="/restaurants" element={<RestaurantList restaurants={rest} />} />
           <Route path="/restaurants/add" element={<AddRestaurant restaurants={rest} setRes={setRes} />} />
-          <Route path="/:id" element={<Restaurant restaurants={rest} getRes={getRes} foods={food} />} />
+          <Route path="/:id" element={<Restaurant restaurants={rest} getRes={getRes} foods={food} getFood={getFood} />} />
           <Route path="/:id/edit" element={<EditRestaurant />} />
           <Route path="/:id/add" element={<AddFood />} />
           <Route path="/:id/foods" element={<FoodList />} />

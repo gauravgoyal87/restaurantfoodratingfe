@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import Food from "./Food";
 
 const FoodList = (props) => {
@@ -7,6 +8,11 @@ const FoodList = (props) => {
     // const restaurants = props.restaurants
     const id = useParams().id
     // const restaurant = restaurants[id]
+
+    const handleDelete = (e) => {
+        axios.delete(`http://localhost:4040/api/food/${e.target.id}`)
+        props.getFood()
+    }
 
     let foodList = props.foods.map(item => {
         return (
@@ -16,7 +22,9 @@ const FoodList = (props) => {
                 <Link to={`/${id}/${item._id}/edit`}>
                     <button>Edit Food</button>
                 </Link>
-                <button>Delete Food</button>
+                <Link to={`/${id}/`} onClick={handleDelete} >
+                    <button id={item._id} >Delete Food</button>
+                </Link>
             </div>
         )
     })   

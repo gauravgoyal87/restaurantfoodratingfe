@@ -21,7 +21,7 @@ const Restaurant = (props) => {
             <Link to="/restaurants" onClick={handleDelete}>
                 <button>Delete Restaurant</button>
             </Link>
-            <FoodList restaurants={props.restaurants} foods={props.foods} />
+            <FoodList restaurants={props.restaurants} foods={props.foods} getFood={props.getFood} />
         </div>
     )
 }
