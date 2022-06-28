@@ -15,6 +15,7 @@ const AddFood = () => {
         restaurantName: restName
     });
 
+
     const handleImage = (e) => {
         setForm({
             image: e.target.value,
@@ -56,15 +57,18 @@ const AddFood = () => {
     }
   
     const handleSubmit = () => {
+
         axios.post('http://localhost:4040/api/food', form)
         .then(res => {
             console.log(res.data)
         })
     }
+
   
       return (
           <div>
               <h3>Add Food</h3>
+
               <form action=''>
                   <input type='text' placeholder='Image' id='image' onChange={handleImage} />
                   <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
@@ -76,6 +80,7 @@ const AddFood = () => {
               </form>
               <Link to={`/${restName}`}>
                   <button>Back</button>
+
               </Link>
           </div>
       )

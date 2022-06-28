@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -14,9 +15,10 @@ import Nav from './components/Nav';
 import Restaurant from './components/Restaurant';
 import RestaurantList from './components/RestaurantList';
 
-const App = () => {
 
+const App = () => {
   const [rest, setRes] = useState([]);
+
   const [food, setFood] = useState([])
   
   useEffect(() => {
@@ -44,11 +46,13 @@ const App = () => {
       })
   }
 
+
   return (
     <div className="App">
       <Nav />
       <main>
         <Routes>
+
           <Route path="/"element={<Home />} />
           <Route path="/restaurants" element={<RestaurantList restaurants={rest} />} />
           <Route path="/restaurants/add" element={<AddRestaurant restaurants={rest} setRes={setRes} />} />
@@ -58,10 +62,16 @@ const App = () => {
           <Route path="/:restName/foods" element={<FoodList />} />
           <Route path="/:restName/:foodName" element={<Food />} />
           <Route path="/:restName/:foodName/edit" element={<EditFood />} />
+
         </Routes>
+<div className="footer">
+        <img src="imgs/VectorLeft.png" alt="" />
+        <img src="imgs/VectorRight.png" alt="" />
+</div>
+
       </main>
     </div>
   );
-}
+};
 
 export default App;

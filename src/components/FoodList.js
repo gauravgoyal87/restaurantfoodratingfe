@@ -9,12 +9,14 @@ const FoodList = (props) => {
     const restName = useParams().restName
     // const restaurant = restaurants[id]
 
+
     const handleDelete = (e) => {
         axios.delete(`http://localhost:4040/api/food/${e.target.id}`)
         props.getFood()
     }
 
     let foodList = props.foods.map(item => {
+
         return (
             <div key={item._id}>
                 <h1>{item.dish}</h1>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const RestaurantList = (props) => {
+  
 
     let restaurants = props.restaurants.map(item => {
         return (
@@ -12,15 +13,23 @@ const RestaurantList = (props) => {
         )
     })
 
-    return (
-        <div>
-            <h2>Restaurant List</h2>
-            <Link to="/restaurants/add">
-                <button>Add New Restaurant</button>
-            </Link>
-            {restaurants}
-        </div>
-    )
-}
+  return (
+    <div className="rl-parent">
+      <div className="rl-title">
+        <p>My Restaurants</p>
+      </div>
 
-export default RestaurantList
+
+      {restaurants}
+
+      <div className="rl-add-button-div">
+        <p>ADD A RESTAURANT</p>
+        <Link to="/restaurants/add">
+          <button className="rl-add-button" >+</button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default RestaurantList;
