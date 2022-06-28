@@ -1,17 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const EditFood = () => {
 
-    const [form, setForm] = useState({});
+    const restName = useParams().restName
+    const foodName = useParams().foodName
+
+    const [form, setForm] = useState({
+        image: '',
+        dish: '',
+        comment: '',
+        rating: '',
+        restaurant: restName
+    });
 
     const handleImage = (e) => {
         setForm({
             image: e.target.value,
             dish: form.dish,
             comment: form.comment,
-            rating: form.rating
+            rating: form.rating,
+            restaurant: restName
         });
       }
   
@@ -20,7 +31,8 @@ const EditFood = () => {
             image: form.image,
             dish: e.target.value,
             comment: form.comment,
-            rating: form.rating
+            rating: form.rating,
+            restaurant: restName
           });
       }
       
@@ -29,7 +41,8 @@ const EditFood = () => {
             image: form.image,
             dish: form.dish,
             comment: e.target.value,
-            rating: form.rating
+            rating: form.rating,
+            restaurant: restName
           });
       }
 
@@ -38,13 +51,17 @@ const EditFood = () => {
           image: form.image,
           dish: form.dish,
           comment: form.comment,
-          rating: e.target.value
+          rating: e.target.value,
+          restaurant: restName
         });
     }
   
-      const handleSubmit = () => {
-          console.log(form)
-      }
+    const handleSubmit = () => {
+        axios.put(`http://localhost:4040/api/food/${foodName}`, form)
+        .then(res => {
+            console.log(res.data)
+        })
+    }
   
       return (
           <div>
@@ -54,11 +71,11 @@ const EditFood = () => {
                   <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
                   <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
                   <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
-                  <Link to=':id/foods'>
+                  <Link to={`/${restName}`}>
                       <button onClick={handleSubmit}>Submit</button>
                   </Link>
               </form>
-              <Link to=":id/foods">
+              <Link to={`/${restName}`}>
                   <button>Back</button>
               </Link>
           </div>

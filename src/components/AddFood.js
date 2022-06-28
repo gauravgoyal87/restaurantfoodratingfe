@@ -1,19 +1,28 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react"
+import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
-// const api = "http://localhost:4040/api/"
 
 const AddFood = () => {
 
-    const [form, setForm] = useState({});
+    const restName = useParams().restName
+
+    const [form, setForm] = useState({
+        image: '',
+        dish: '',
+        comment: '',
+        rating: '',
+        restaurantName: restName
+    });
+
 
     const handleImage = (e) => {
         setForm({
             image: e.target.value,
             dish: form.dish,
             comment: form.comment,
-            rating: form.rating
+            rating: form.rating,
+            restaurantName: restName
         });
       }
   
@@ -22,7 +31,8 @@ const AddFood = () => {
             image: form.image,
             dish: e.target.value,
             comment: form.comment,
-            rating: form.rating
+            rating: form.rating,
+            restaurantName: restName
           });
       }
       
@@ -31,7 +41,8 @@ const AddFood = () => {
             image: form.image,
             dish: form.dish,
             comment: e.target.value,
-            rating: form.rating
+            rating: form.rating,
+            restaurantName: restName
           });
       }
 
@@ -40,31 +51,36 @@ const AddFood = () => {
           image: form.image,
           dish: form.dish,
           comment: form.comment,
-          rating: e.target.value
+          rating: e.target.value,
+          restaurantName: restName
         });
     }
   
     const handleSubmit = () => {
-      axios.post('http://localhost:4040/api/food', form)
-      .then(res => {
-          console.log(res.data)
-      })
-  }
+
+        axios.post('http://localhost:4040/api/food', form)
+        .then(res => {
+            console.log(res.data)
+        })
+    }
+
   
       return (
           <div>
               <h3>Add Food</h3>
-              <form >
-                  <input type='text' placeholder='Image' name='image' onChange={handleImage}/>
-                  <input type='text' placeholder='Dish' name='dish' onChange={handleDish}/>
-                  <input type='text' placeholder='Comment' name='comment' onChange={handleComment}/>
-                  <input type='number' placeholder='Rating' name='rating' onChange={handleRating}/>
-                  <Link to=':id/food'>
+
+              <form action=''>
+                  <input type='text' placeholder='Image' id='image' onChange={handleImage} />
+                  <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
+                  <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
+                  <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
+                  <Link to={`/${restName}`}>
                       <button onClick={handleSubmit}>Submit</button>
                   </Link>
               </form>
-              <Link to=":id/food">
-                  <button onClick={handleSubmit} >Back</button>
+              <Link to={`/${restName}`}>
+                  <button>Back</button>
+
               </Link>
           </div>
       )
