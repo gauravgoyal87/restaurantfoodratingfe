@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 
 const AddFood = () => {
+  const restName = useParams().restName;
+
 
     const restName = useParams().restName
 
@@ -86,4 +88,56 @@ const AddFood = () => {
       )
   }
 
-export default AddFood
+
+  const handleRating = (e) => {
+    setForm({
+      image: form.image,
+      dish: form.dish,
+      comment: form.comment,
+      rating: e.target.value,
+      restaurantName: restName,
+    });
+  };
+
+  const handleSubmit = () => {
+    axios.post("http://localhost:4040/api/food", form).then((res) => {
+      console.log(res.data);
+    });
+  };
+
+  return (
+    <div>
+      <p>Add Food</p>
+
+      <form action="">
+        <input
+          type="text"
+          placeholder="Image"
+          id="image"
+          onChange={handleImage}
+        />
+        <input type="text" placeholder="Dish" id="dish" onChange={handleDish} />
+        <input
+          type="text"
+          placeholder="Comment"
+          id="comment"
+          onChange={handleComment}
+        />
+        <input
+          type="number"
+          placeholder="Rating"
+          id="rating"
+          onChange={handleRating}
+        />
+        <Link to={`/${restName}`}>
+          <button onClick={handleSubmit}>Submit</button>
+        </Link>
+        <Link to={`/${restName}`}>
+          <button>Back</button>
+        </Link>
+      </form>
+    </div>
+  );
+};
+
+export default AddFood;
