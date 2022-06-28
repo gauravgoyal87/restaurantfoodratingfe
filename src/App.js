@@ -19,6 +19,10 @@ const App = () => {
   const [rest, setRes] = useState([]);
   
   useEffect(() => {
+    getRes()
+  }, [rest])
+
+  const getRes = () => {
     axios.get('http://localhost:4040/api/restaurant')
     .then((r) => {
       const rests = r.data
@@ -26,7 +30,7 @@ const App = () => {
     }).catch((error) => {
         console.log(error)
       })
-  }, [])
+  }
 
   return (
     <div className="App">
@@ -35,7 +39,7 @@ const App = () => {
         <Routes>
           <Route path="/"element={<Home />} />
           <Route path="/restaurants" element={<RestaurantList restaurants={rest} />} />
-          <Route path="/restaurants/add" element={<AddRestaurant />} />
+          <Route path="/restaurants/add" element={<AddRestaurant restaurants={rest} setRes={setRes} />} />
           <Route path="/:id" element={<Restaurant restaurants={rest} />} />
           <Route path="/:id/edit" element={<EditRestaurant />} />
           <Route path="/:id/add" element={<AddFood />} />

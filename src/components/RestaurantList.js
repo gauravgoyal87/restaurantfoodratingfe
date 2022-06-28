@@ -6,7 +6,7 @@ const RestaurantList = (props) => {
     let restaurants = props.restaurants.map(item => {
         return (
             <Link key={item._id} to={`/${item._id}`}>
-                <h4>{item.restaurantName}</h4>
+                <h4>{item.name}</h4>
                 <p>{item.location}</p>
             </Link>
         )
