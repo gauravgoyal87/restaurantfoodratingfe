@@ -8,7 +8,7 @@ const FoodList = (props) => {
     const id = useParams().id
     const restaurant = restaurants[id]
 
-    let foodList = restaurant.foods.map(item => {
+    let foodList = restaurant.food.map(item => {
         return (
             <div key={item.price}>
                 <h3>{item.foodName}</h3>
