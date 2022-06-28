@@ -159,4 +159,11 @@
   font-size: 2rem;
   width: 3rem;
   height: 3rem;
+  cursor: pointer;
+}
+
+/* -------------------------------- Add Restaurant -------------------------------- */
+
+.ar-parent {
+  border: red 2px dotted;
 }
