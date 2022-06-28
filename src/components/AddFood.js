@@ -12,7 +12,7 @@ const AddFood = () => {
         dish: '',
         comment: '',
         rating: '',
-        restaurant: restName
+        restaurantName: restName
     });
 
     const handleImage = (e) => {
@@ -21,7 +21,7 @@ const AddFood = () => {
             dish: form.dish,
             comment: form.comment,
             rating: form.rating,
-            restaurant: restName
+            restaurantName: restName
         });
       }
   
@@ -31,7 +31,7 @@ const AddFood = () => {
             dish: e.target.value,
             comment: form.comment,
             rating: form.rating,
-            restaurant: restName
+            restaurantName: restName
           });
       }
       
@@ -41,7 +41,7 @@ const AddFood = () => {
             dish: form.dish,
             comment: e.target.value,
             rating: form.rating,
-            restaurant: restName
+            restaurantName: restName
           });
       }
 
@@ -51,7 +51,7 @@ const AddFood = () => {
           dish: form.dish,
           comment: form.comment,
           rating: e.target.value,
-          restaurant: restName
+          restaurantName: restName
         });
     }
   
