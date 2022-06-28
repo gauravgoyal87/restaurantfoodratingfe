@@ -17,9 +17,11 @@ import RestaurantList from './components/RestaurantList';
 const App = () => {
 
   const [rest, setRes] = useState([]);
+  const [food, setFood] = useState([])
   
   useEffect(() => {
     getRes()
+    getFood()
   }, [rest])
 
   const getRes = () => {
@@ -27,6 +29,16 @@ const App = () => {
     .then((r) => {
       const rests = r.data
       setRes(rests)
+    }).catch((error) => {
+        console.log(error)
+      })
+  }
+
+  const getFood = () => {
+    axios.get('http://localhost:4040/api/food')
+    .then((r) => {
+      const foods = r.data
+      setFood(foods)
     }).catch((error) => {
         console.log(error)
       })
@@ -40,7 +52,7 @@ const App = () => {
           <Route path="/"element={<Home />} />
           <Route path="/restaurants" element={<RestaurantList restaurants={rest} />} />
           <Route path="/restaurants/add" element={<AddRestaurant restaurants={rest} setRes={setRes} />} />
-          <Route path="/:id" element={<Restaurant restaurants={rest} getRes={getRes} />} />
+          <Route path="/:id" element={<Restaurant restaurants={rest} getRes={getRes} foods={food} />} />
           <Route path="/:id/edit" element={<EditRestaurant />} />
           <Route path="/:id/add" element={<AddFood />} />
           <Route path="/:id/foods" element={<FoodList />} />
