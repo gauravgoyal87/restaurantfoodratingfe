@@ -44,9 +44,53 @@
 
 /* -------------------------------- Home Page ------------------------------- */
 
+.home-great-grandparent {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  /* border: #e53535 dotted 3px; */
+}
+
+.home-uncle {
+  /* border: #e53535 dotted 3px; */
+  /* height: 100%; */
+}
+
+.home-uncle .home-grease {
+  transform: translate(186px, -90px);
+  /* transform: translateX(200px); */
+}
+
 .home-parent {
   display: flex;
   flex-direction: column;
+  /* border: black dotted 2px; */
+  padding: 4rem;
+  letter-spacing: 0.1rem;
+  gap: 3rem;
+}
+
+.home-parent :nth-child(1) {
+  /* border: #e53535 dotted 2px; */
+  font-family: bungee;
+  font-size: 3rem;
+}
+
+.home-parent :nth-child(1) span {
+  color: red;
+}
+
+.home-parent :nth-child(2) {
+  display: flex;
+  justify-content: end;
+  color: red;
+  /* border: teal dotted 2px; */
+}
+
+.home-parent :nth-child(2) span {
+  color: black;
+  position: relative;
+  bottom: 20px;
 }
 
 .home-parent button {
@@ -61,4 +105,5 @@
   border-radius: 12px;
   color: white;
   font-family: bungee;
+  font-size: 1.2rem;
 }
