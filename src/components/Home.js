@@ -1,26 +1,29 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
+
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const [data, setData] = useState([])
-  const api = "http://localhost:4040/api/"
-useEffect(() => {
-    axios.get(api)
-      .then(res => {
-        setData(res.data)
-        console.log(res.data)
-      })
-      .catch(console.error)
-  }, [])
-}
+  return (
+    <div className="home-great-grandparent">
+      <div className="home-uncle">
+        <img src="imgs/Spoon.png" alt="" />
+        <img className="home-grease" src="imgs/Grease.png" alt="" />
+      </div>
+      <div className="home-parent">
+        <p className="home-p1" >
+          "UH... WHAT WAS THAT
+          <span> THING WE ATE </span>
+          THAT ONE TIME?"
+        </p>
+        <p>
+          ... YOU MIGHT WANNA <span className="home-write" >WRITE</span> THAT SOMEWHERE
+        </p>
+        <Link to="/restaurants">
+          <button className="home-button" >WRITE IT DOWN</button>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
-// const Home = () => {
-//     return (
-//         <div>
-//             <p>I am a landing page</p>
-//         </div>
-//     )
-// }
-
-export default Home
+export default Home;
