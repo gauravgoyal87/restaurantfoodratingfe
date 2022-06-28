@@ -1,10 +1,32 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { useState } from "react"
+import { useState } from "react"
 import axios from "axios";
 // const api = "http://localhost:4040/api/"
 
+// function goHome() {
+//   const [toHome, setToHome] = React.useState(false);
+
+//   if (toHome === true) {
+//     return <Navigate to="/foodList" />;
+//   }
+
+//   return (
+//     <div>
+//       <h1>Register</h1>
+//       <Form afterSubmit={() => toDashboard(true)} />
+//     </div>
+//   );
+// }
+
 const AddFood = () => {
+  // const navigate = useNavigate()
+  // function goHome() {
+  //   const [toHome, setToHome] = useState()
+  
+  //   if (toHome === true) {
+  //     return <navigate to="/foodList" />;
+  //   }
   return (
     <div>
       <form action="http://localhost:4040/api/food" method="POST">
@@ -16,9 +38,13 @@ const AddFood = () => {
           Submit!
         </button>
       </form>
+        <Link to=":id/food">
+          <button>Back</button>
+        </Link>
     </div>
   );
 };
+
 
 
 
