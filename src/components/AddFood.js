@@ -5,13 +5,14 @@ import axios from "axios";
 
 const AddFood = () => {
 
-    const id = useParams().id
+    const restName = useParams().restName
 
     const [form, setForm] = useState({
         image: '',
         dish: '',
         comment: '',
-        rating: ''
+        rating: '',
+        restaurant: restName
     });
 
     const handleImage = (e) => {
@@ -19,7 +20,8 @@ const AddFood = () => {
             image: e.target.value,
             dish: form.dish,
             comment: form.comment,
-            rating: form.rating
+            rating: form.rating,
+            restaurant: restName
         });
       }
   
@@ -28,7 +30,8 @@ const AddFood = () => {
             image: form.image,
             dish: e.target.value,
             comment: form.comment,
-            rating: form.rating
+            rating: form.rating,
+            restaurant: restName
           });
       }
       
@@ -37,7 +40,8 @@ const AddFood = () => {
             image: form.image,
             dish: form.dish,
             comment: e.target.value,
-            rating: form.rating
+            rating: form.rating,
+            restaurant: restName
           });
       }
 
@@ -46,7 +50,8 @@ const AddFood = () => {
           image: form.image,
           dish: form.dish,
           comment: form.comment,
-          rating: e.target.value
+          rating: e.target.value,
+          restaurant: restName
         });
     }
   
@@ -65,11 +70,11 @@ const AddFood = () => {
                   <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
                   <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
                   <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
-                  <Link to={`/${id}`}>
+                  <Link to={`/${restName}`}>
                       <button onClick={handleSubmit}>Submit</button>
                   </Link>
               </form>
-              <Link to={`/${id}`}>
+              <Link to={`/${restName}`}>
                   <button>Back</button>
               </Link>
           </div>

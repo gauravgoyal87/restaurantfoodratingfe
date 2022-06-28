@@ -5,7 +5,7 @@ import axios from "axios";
 
 const EditRestaurant = () => {
 
-    const id = useParams().id
+    const restName = useParams().restName
 
     const [form, setForm] = useState({
         name: '',
@@ -27,7 +27,7 @@ const EditRestaurant = () => {
     }
 
     const handleSubmit = () => {
-        axios.put(`http://localhost:4040/api/restaurant/${id}`, form)
+        axios.put(`http://localhost:4040/api/restaurant/${restName}`, form)
         .then(res => {
             console.log(res.data)
         })

@@ -6,7 +6,7 @@ import Food from "./Food";
 const FoodList = (props) => {
 
     // const restaurants = props.restaurants
-    const id = useParams().id
+    const restName = useParams().restName
     // const restaurant = restaurants[id]
 
     const handleDelete = (e) => {
@@ -19,10 +19,10 @@ const FoodList = (props) => {
             <div key={item._id}>
                 <h1>{item.dish}</h1>
                 <h3>{item.comment}</h3>
-                <Link to={`/${id}/${item._id}/edit`}>
+                <Link to={`/${restName}/${item.dish}/edit`}>
                     <button>Edit Food</button>
                 </Link>
-                <Link to={`/${id}/`} onClick={handleDelete} >
+                <Link to={`/${restName}/`} onClick={handleDelete} >
                     <button id={item._id} >Delete Food</button>
                 </Link>
             </div>
@@ -32,7 +32,7 @@ const FoodList = (props) => {
     return (
         <div>
             <h2>Food List</h2>
-            <Link to={`/${id}/add`}>
+            <Link to={`/${restName}/add`}>
                 <button>Add New Food</button>
             </Link>
             {foodList}

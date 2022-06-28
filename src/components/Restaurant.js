@@ -5,17 +5,17 @@ import FoodList from "./FoodList";
 
 const Restaurant = (props) => {
 
-    const id = useParams().id
+    const restName = useParams().restName
 
     const handleDelete = () => {
-        axios.delete(`http://localhost:4040/api/restaurant/${id}`)
+        axios.delete(`http://localhost:4040/api/restaurant/${restName}`)
         props.getRes()
     }
 
     return (
         <div>
             <h2>Restaurant</h2>
-            <Link to={`/${id}/edit`}>
+            <Link to={`/${restName}/edit`}>
                 <button>Edit Restaurant</button>
             </Link>
             <Link to="/restaurants" onClick={handleDelete}>
