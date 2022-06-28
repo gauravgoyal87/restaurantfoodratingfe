@@ -51,11 +51,6 @@
   /* border: #e53535 dotted 3px; */
 }
 
-.home-uncle {
-  /* border: #e53535 dotted 3px; */
-  /* height: 100%; */
-}
-
 .home-uncle .home-grease {
   transform: translate(186px, -90px);
   /* transform: translateX(200px); */
@@ -118,4 +113,50 @@
   color: white;
   font-family: bungee;
   font-size: 1.2rem;
+}
+
+/* ----------------------------- Restaurant List ---------------------------- */
+
+.rl-parent {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  width: 80%;
+  border: #e53535 2px solid;
+  gap: 1rem;
+}
+
+.rl-title {
+  width: 100%;
+  border: black 2px dotted;
+  font-family: bungee;
+  font-size: 2rem;
+}
+
+.rl-add-button-div {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  bottom: 30px;
+  right: 150px;
+  font-family: bungee;
+  font-size: 2rem;
+  color: red;
+  gap: 1rem;
+  z-index: 1;
+  /* border: #e53535 2px solid; */
+  /* transform: translate(100px); */
+}
+
+.rl-add-button {
+  background: #e53535;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 64px;
+  color: white;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
 }
