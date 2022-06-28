@@ -41,3 +41,81 @@
   background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* -------------------------------- Home Page ------------------------------- */
+
+.home-great-grandparent {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  /* border: #e53535 dotted 3px; */
+}
+
+.home-uncle {
+  /* border: #e53535 dotted 3px; */
+  /* height: 100%; */
+}
+
+.home-uncle .home-grease {
+  transform: translate(186px, -90px);
+  /* transform: translateX(200px); */
+}
+
+.home-parent {
+  display: flex;
+  flex-direction: column;
+  /* border: black dotted 2px; */
+  padding: 4rem;
+  letter-spacing: 0.1rem;
+  gap: 3rem;
+}
+
+.home-parent a {
+  text-decoration: none;
+}
+
+.home-parent :nth-child(1) {
+  /* border: #e53535 dotted 2px; */
+  font-family: bungee;
+  /* font-size: 3rem; */
+}
+
+.home-p1 {
+  font-size: 3rem;
+}
+
+.home-write {
+  font-size: 3rem;
+}
+
+.home-parent :nth-child(1) span {
+  color: red;
+}
+
+.home-parent :nth-child(2) {
+  display: flex;
+  justify-content: end;
+  color: red;
+  /* border: teal dotted 2px; */
+}
+
+.home-parent :nth-child(2) span {
+  color: black;
+  position: relative;
+  bottom: 20px;
+}
+
+.home-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 255px;
+  height: 64px;
+  background: #e53535;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  color: white;
+  font-family: bungee;
+  font-size: 1.2rem;
+}
