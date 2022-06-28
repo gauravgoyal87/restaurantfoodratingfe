@@ -1,8 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const EditFood = () => {
+
+    const id = useParams().id
+    const foodId = useParams().foodId
 
     const [form, setForm] = useState({});
 
@@ -42,9 +46,12 @@ const EditFood = () => {
         });
     }
   
-      const handleSubmit = () => {
-          console.log(form)
-      }
+    const handleSubmit = () => {
+        axios.put(`http://localhost:4040/api/food/${foodId}`, form)
+        .then(res => {
+            console.log(res.data)
+        })
+    }
   
       return (
           <div>
@@ -54,11 +61,11 @@ const EditFood = () => {
                   <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
                   <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
                   <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
-                  <Link to=':id/foods'>
+                  <Link to={`/${id}`}>
                       <button onClick={handleSubmit}>Submit</button>
                   </Link>
               </form>
-              <Link to=":id/foods">
+              <Link to={`/${id}`}>
                   <button>Back</button>
               </Link>
           </div>
