@@ -25,27 +25,37 @@ const AddRestaurant = () => {
 
   return (
     <div className="ar-parent">
-      <h3>Add Restaurant</h3>
-      <form action="">
+      <div className="ar-title">
+        <p>Add Restaurant</p>
+      </div>
+
+      <form className="ar-form" action="">
         <input
           type="text"
-          placeholder="Name"
+          placeholder="NAME"
           id="restaurantName"
           onChange={handleName}
         />
+
+        <input type="text" placeholder="CUISINE" />
         <input
           type="text"
-          placeholder="Location"
+          placeholder="LOCATION"
           id="location"
           onChange={handleLocation}
         />
-        <Link to="/restaurants">
-          <button onClick={handleSubmit}>Submit</button>
-        </Link>
+
+        <div className="ar-buttons">
+          <Link to="/restaurants">
+            <button className="ar-cancel">CANCEL</button>
+          </Link>
+          <Link to="/:restName/add">
+            <button className="ar-next" onClick={handleSubmit}>
+              NEXT: ADD FOOD
+            </button>
+          </Link>
+        </div>
       </form>
-      <Link to="/restaurants">
-        <button>Back</button>
-      </Link>
     </div>
   );
 };
