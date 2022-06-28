@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const RestaurantList = (props) => {
 
-    let restaurants = props.restaurants.map((item, index) => {
+    let restaurants = props.restaurants.map(item => {
         return (
-            <Link key={index} to={`/${index}`}>
+            <Link key={item._id} to={`/${item._id}`}>
                 <h4>{item.restaurantName}</h4>
                 <p>{item.location}</p>
             </Link>

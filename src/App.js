@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import axios from 'axios';
 import AddFood from './components/AddFood';
 import AddRestaurant from './components/AddRestaurant';
 import EditFood from './components/EditFood';
@@ -18,12 +19,11 @@ const App = () => {
   const [rest, setRes] = useState([]);
   
   useEffect(() => {
-    fetch('./data.json')
-      .then((response) => response.json())
-      .then((data) => {
-        setRes(data)
-      })
-      .catch((error) => {
+    axios.get('http://localhost:4040/api/restaurant')
+    .then((r) => {
+      const rests = r.data
+      setRes(rests)
+    }).catch((error) => {
         console.log(error)
       })
   }, [])
