@@ -8,18 +8,18 @@ const FoodList = (props) => {
     const id = useParams().id
     const restaurant = restaurants[id]
 
-    let foodList = restaurant.food.map(item => {
-        return (
-            <div key={item._id}>
-                <h3>{item.dish}</h3>
-                <h3>$ {item.comment}</h3>
-                <Link to={`/${id}/${item._id}/edit`}>
-                    <button>Edit Food</button>
-                </Link>
-                <button>Delete Food</button>
-            </div>
-        )
-    })
+    // let foodList = restaurant.food.map(item => {
+    //     return (
+    //         <div key={item._id}>
+    //             <h3>{item.dish}</h3>
+    //             <h3>$ {item.comment}</h3>
+    //             <Link to={`/${id}/${item._id}/edit`}>
+    //                 <button>Edit Food</button>
+    //             </Link>
+    //             <button>Delete Food</button>
+    //         </div>
+    //     )
+    // })
 
     return (
         <div>
@@ -27,7 +27,7 @@ const FoodList = (props) => {
             <Link to={`/${id}/add`}>
                 <button>Add New Food</button>
             </Link>
-            {foodList}
+            {/* {foodList} */}
         </div>
     )
 }

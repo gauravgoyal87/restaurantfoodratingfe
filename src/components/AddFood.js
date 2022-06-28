@@ -1,10 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const AddFood = () => {
 
-    const [form, setForm] = useState({});
+    const id = useParams().id
+
+    const [form, setForm] = useState({
+        image: '',
+        dish: '',
+        comment: '',
+        rating: ''
+    });
 
     const handleImage = (e) => {
         setForm({
@@ -42,23 +50,26 @@ const AddFood = () => {
         });
     }
   
-      const handleSubmit = () => {
-          console.log(form)
-      }
+    const handleSubmit = () => {
+        axios.post('http://localhost:4040/api/food', form)
+        .then(res => {
+            console.log(res.data)
+        })
+    }
   
       return (
           <div>
-              <h3>Add Restaurant</h3>
+              <h3>Add Food</h3>
               <form action=''>
                   <input type='text' placeholder='Image' id='image' onChange={handleImage} />
                   <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
                   <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
                   <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
-                  <Link to=':id/foods'>
+                  <Link to={`/${id}`}>
                       <button onClick={handleSubmit}>Submit</button>
                   </Link>
               </form>
-              <Link to=":id/foods">
+              <Link to={`/${id}`}>
                   <button>Back</button>
               </Link>
           </div>
