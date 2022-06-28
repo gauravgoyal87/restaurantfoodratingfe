@@ -5,19 +5,37 @@ import axios from "axios";
 // const api = "http://localhost:4040/api/"
 
 const AddFood = () => {
-  const navigate = useNavigate()
-  const onSubmit = (event) => {
-      event.preventDefault()
-      console.log("submit clicked")
-      const fData = new FormData(event.target)
-      const params = {image: fData.get("image"), dish: fData.get("dish"), 
-      comment: fData.get("comment"), rating: fData.get("rating")
-      }
-     axios.post("http://localhost:4040/api/food", params)
-      .then(() => {
-          navigate("/")
-      }).catch(console.error)
-  }
+  return (
+    <div>
+      <form action="http://localhost:4040/api/food" method="POST">
+        <input type="text" placeholder="image" name="image" />
+        <input type="text" placeholder="dish" name="dish" />
+        <input type="text" placeholder="comment" name="comment" />
+        <input type="number" placeholder="rating" name="rating" />
+        <button id="muButton" type="submit">
+          Submit!
+        </button>
+      </form>
+    </div>
+  );
+};
+
+
+
+// const AddFood = () => {
+  // const navigate = useNavigate()
+  // const onSubmit = (event) => {
+  //     event.preventDefault()
+  //     console.log("submit clicked")
+  //     const fData = new FormData(event.target)
+  //     const params = {image: fData.get("image"), dish: fData.get("dish"), 
+  //     comment: fData.get("comment"), rating: fData.get("rating")
+  //     }
+  //    axios.post("http://localhost:4040/api/food", params)
+  //     .then(() => {
+  //         navigate("/")
+  //     }).catch(console.error)
+  // }
 
     // const [form, setForm] = useState({});
 
@@ -62,29 +80,26 @@ const AddFood = () => {
       //   }
       //     console.log(form)
   
-      return (
-          <div>
-              <h3>Add Food</h3>
-              {/* <form onSubmit={onSubmit}> */}
-              <form >
-                  <input type='text' placeholder='Image' name='image'/>
-                  <input type='text' placeholder='Dish' name='dish'/>
-                  <input type='text' placeholder='Comment' name='comment'/>
-                  <input type='number' placeholder='Rating' name='rating'/>
-                  {/* <Link to=':id/food'> */}
-                      <button onClick={onSubmit}>Submit</button>
-                  {/* </Link> */}
-              </form>
-              <Link to=":id/food">
-                  <button  >Back</button>
-              </Link>
-          </div>
-      )
-  }
-
+  //     return (
+  //         <div>
+  //             <h3>Add Food</h3>
+  //             <form >
+  //                 <input type='text' placeholder='Image' name='image'/>
+  //                 <input type='text' placeholder='Dish' name='dish'/>
+  //                 <input type='text' placeholder='Comment' name='comment'/>
+  //                 <input type='number' placeholder='Rating' name='rating'/>
+  //                 <Link to=':id/food'>
+  //                     <button onClick={onSubmit}>Submit</button>
+  //                 </Link>
+  //             </form>
+  //             <Link to=":id/food">
+  //                 <button  >Back</button>
+  //             </Link>
+  //         </div>
+  //     )
+  // }
 
 export default AddFood
-
 
         // const [data, setData] = useState([])
         // const api = "http://localhost:4040/api/"
@@ -96,6 +111,7 @@ export default AddFood
         //       })
         //       .catch(console.error)
         //   }, [])
+
 
 
     //     const navigate = useNavigate()
