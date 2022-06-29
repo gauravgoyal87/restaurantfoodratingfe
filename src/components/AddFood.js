@@ -4,7 +4,9 @@ import { useState } from "react";
 import axios from "axios";
 
 const AddFood = () => {
+
   const restName = useParams().restName;
+  
   const [form, setForm] = useState({
     image: "",
     dish: "",

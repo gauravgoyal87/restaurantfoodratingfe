@@ -90,17 +90,41 @@ const EditFood = () => {
           onChange={handleRating}
         />
 
-        <div className="ef-buttons">
-          <Link  to={`/${restName}`}>
-            <button className="af-cancel" >Back</button>
-          </Link>
-          <Link to={`/${restName}`}>
-            <button className="af-next" onClick={handleSubmit}>Submit</button>
-          </Link>
-        </div>
-      </form>
-    </div>
-  );
-};
+      const handleRating = (e) => {
+        setForm({
+          image: form.image,
+          dish: form.dish,
+          comment: form.comment,
+          rating: e.target.value,
+          restaurant: restName
+        });
+    }
+  
+    const handleSubmit = () => {
+        axios.put(`http://localhost:4040/api/food/${foodName}`, form)
+        .then(res => {
+            console.log(res.data)
+        })
+    }
+  
+      return (
+          <div>
+              <h3>Edit Food</h3>
+              <form action=''>
+                  <input type='text' placeholder='Image' id='image' onChange={handleImage} />
+                  <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
+                  <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
+                  <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
+                  <Link to={`/${restName}`}>
+                      <button onClick={handleSubmit}>Submit</button>
+                  </Link>
+              </form>
+              <Link to={`/${restName}`}>
+                  <button>Back</button>
+              </Link>
+          </div>
+      )
+  }
+
 
 export default EditFood;

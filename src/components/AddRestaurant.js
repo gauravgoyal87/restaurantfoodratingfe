@@ -4,8 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 
 const AddRestaurant = () => {
-  const [form, setForm] = useState({});
 
+  const [form, setForm] = useState({});
 
   const handleName = (e) => {
     setForm({
@@ -22,7 +22,9 @@ const AddRestaurant = () => {
   };
 
   const handleSubmit = () => {
-    console.log(form);
+    axios.post("http://localhost:4040/api/restaurant", form).then((res) => {
+      console.log(res.data);
+    });
   };
 
   return (
@@ -56,8 +58,6 @@ const AddRestaurant = () => {
               NEXT: ADD FOOD
             </button>
           </Link>
-
-
         </div>
       </form>
     </div>
