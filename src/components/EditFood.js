@@ -65,7 +65,7 @@ const EditFood = () => {
   
       return (
           <div>
-              <h3>Edit Restaurant</h3>
+              <h3>Edit Food</h3>
               <form action=''>
                   <input type='text' placeholder='Image' id='image' onChange={handleImage} />
                   <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />

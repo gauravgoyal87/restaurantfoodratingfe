@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const RestaurantList = (props) => {
   
-
     let restaurants = props.restaurants.map(item => {
         return (
             <Link key={item._id} to={`/${item.name}`}>

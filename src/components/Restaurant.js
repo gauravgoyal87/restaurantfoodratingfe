@@ -4,6 +4,7 @@ import axios from "axios";
 import FoodList from "./FoodList";
 
 const Restaurant = (props) => {
+
   const restName = useParams().restName;
 
   const handleDelete = () => {
@@ -21,20 +22,12 @@ const Restaurant = (props) => {
         foods={props.foods}
         getFood={props.getFood}
       />
-
       <p>
         Of course it hurt that we could never love each other in a physical way.
         We would have been far more happy if we had. But that was like the
         tides, the change of seasons-- something immutable, an immovable destiny
         we could never alter.
       </p>
-
-      {/* <Link to={`/${restName}/edit`}>
-        <button>Edit Restaurant</button>
-      </Link>
-      <Link to="/restaurants" onClick={handleDelete}>
-        <button>Delete Restaurant</button>
-      </Link> */}
       <div className="rl-add-button-div">
         <p>ADD FOOD</p>
         <Link to={`/${restName}/add`}>

@@ -15,10 +15,9 @@ import Nav from './components/Nav';
 import Restaurant from './components/Restaurant';
 import RestaurantList from './components/RestaurantList';
 
-
 const App = () => {
-  const [rest, setRes] = useState([]);
 
+  const [rest, setRes] = useState([]);
   const [food, setFood] = useState([])
   
   useEffect(() => {
@@ -46,7 +45,6 @@ const App = () => {
       })
   }
 
-
   return (
     <div className="App">
       <Nav />
@@ -64,11 +62,10 @@ const App = () => {
           <Route path="/:restName/:foodName/edit" element={<EditFood />} />
 
         </Routes>
-<div className="footer">
-        <img src="imgs/VectorLeft.png" alt="" />
-        <img src="imgs/VectorRight.png" alt="" />
-</div>
-
+          <div className="footer">
+                  <img src="imgs/VectorLeft.png" alt="" />
+                  <img src="imgs/VectorRight.png" alt="" />
+          </div>
       </main>
     </div>
   );
