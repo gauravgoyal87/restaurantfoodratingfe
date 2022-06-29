@@ -34,9 +34,7 @@ const FoodList = (props) => {
     return (
         <div>
             <h2>Food List</h2>
-            <Link to={`/${restName}/add`}>
-                <button>Add New Food</button>
-            </Link>
+
             {foodList}
         </div>
     )

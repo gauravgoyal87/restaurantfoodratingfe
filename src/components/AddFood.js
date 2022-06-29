@@ -61,35 +61,42 @@ const AddFood = () => {
   };
 
   return (
-    <div>
-      <p>Add Food</p>
+    <div className="af-parent">
+      <div className="af-title">
+        <p>Add Food</p>
+      </div>
 
-      <form action="">
+      <form className="af-form" action="">
         <input
           type="text"
-          placeholder="Image"
+          placeholder="IMAGE"
           id="image"
           onChange={handleImage}
         />
-        <input type="text" placeholder="Dish" id="dish" onChange={handleDish} />
+        <input type="text" placeholder="DISH" id="dish" onChange={handleDish} />
         <input
           type="text"
-          placeholder="Comment"
+          placeholder="COMMENT"
           id="comment"
           onChange={handleComment}
         />
         <input
           type="number"
-          placeholder="Rating"
+          placeholder="RATING"
           id="rating"
           onChange={handleRating}
         />
-        <Link to={`/${restName}`}>
-          <button onClick={handleSubmit}>Submit</button>
-        </Link>
-        <Link to={`/${restName}`}>
-          <button>Back</button>
-        </Link>
+
+        <div className="af-buttons">
+          <Link to={`/restaurants/add`}>
+            <button className="af-cancel">CANCEL</button>
+          </Link>
+          <Link to={`/${restName}`}>
+            <button className="af-next" onClick={handleSubmit}>
+              DONE
+            </button>
+          </Link>
+        </div>
       </form>
     </div>
   );
