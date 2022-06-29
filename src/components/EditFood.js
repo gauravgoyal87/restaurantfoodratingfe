@@ -62,51 +62,49 @@ const EditFood = () => {
         console.log(res.data);
       });
   };
+//   return (
+//     <div className="ef-parent">
+//       <div className="ef-title">
+//         <p>Edit Food</p>
+//       </div>
 
-  return (
-    <div className="ef-parent">
-      <div className="ef-title">
-        <p>Edit Food</p>
-      </div>
-
-      <form className="ef-form" action="">
-        <input
-          type="text"
-          placeholder="Image"
-          id="image"
-          onChange={handleImage}
-        />
-        <input type="text" placeholder="Dish" id="dish" onChange={handleDish} />
-        <input
-          type="text"
-          placeholder="Comment"
-          id="comment"
-          onChange={handleComment}
-        />
-        <input
-          type="number"
-          placeholder="Rating"
-          id="rating"
-          onChange={handleRating}
-        />
-
-      const handleRating = (e) => {
-        setForm({
-          image: form.image,
-          dish: form.dish,
-          comment: form.comment,
-          rating: e.target.value,
-          restaurant: restName
-        });
-    }
+{/* //       <form className="ef-form" action="">
+//         <input
+//           type="text"
+//           placeholder="Image"
+//           id="image"
+//           onChange={handleImage}
+//         />
+//         <input type="text" placeholder="Dish" id="dish" onChange={handleDish} />
+//         <input
+//           type="text"
+//           placeholder="Comment"
+//           id="comment"
+//           onChange={handleComment}
+//         />
+//         <input
+//           type="number"
+//           placeholder="Rating"
+//           id="rating"
+//           onChange={handleRating}
+//         />
+// </form>
+//       const handleRating = (e) => {
+//         setForm({
+//           image: form.image,
+//           dish: form.dish,
+//           comment: form.comment,
+//           rating: e.target.value,
+//           restaurant: restName
+//         });
+//     }
   
-    const handleSubmit = () => {
-        axios.put(`http://localhost:4040/api/food/${foodName}`, form)
-        .then(res => {
-            console.log(res.data)
-        })
-    }
-  
+//     const handleSubmit = () => {
+//         axios.put(`http://localhost:4040/api/food/${foodName}`, form)
+//         .then(res => {
+//             console.log(res.data)
+//         })
+//     } */}
       return (
           <div>
               <h3>Edit Food</h3>
