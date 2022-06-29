@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const AddRestaurant = () => {
   const [form, setForm] = useState({});
+
 
   const handleName = (e) => {
     setForm({
@@ -54,6 +56,8 @@ const AddRestaurant = () => {
               NEXT: ADD FOOD
             </button>
           </Link>
+
+
         </div>
       </form>
     </div>
