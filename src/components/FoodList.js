@@ -1,20 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import Food from "./Food";
 
 const FoodList = (props) => {
 
-    // const restaurants = props.restaurants
     const restName = useParams().restName
-    // const restaurant = restaurants[id]
+    const [allFood, setAllFood] = useState([])
+    const [food, setFood] = useState([])
+    
+    const findFood = () => {
+        for (let i=0; i<allFood.length; i++) {
+            if (allFood[i].restaurantName === restName) {
+                setFood(food => [...food, allFood[i]])
+            }}
+        // getFood()
+    }
+    const getFood = () => {
+        axios.get('http://localhost:4040/api/food')
+        .then((r) => {
+          const foods = r.data
+          setAllFood(foods)
+        }).catch((error) => {
+        console.log(error)
+      })
+    }
+
+    useEffect(() => {
+        getFood()
+        // findFood()
+    }, [])
+
+    useEffect(() => {
+        findFood()
+    }, [allFood])
 
     const handleDelete = (e) => {
         axios.delete(`http://localhost:4040/api/food/id/${e.target.id}`)
-        props.getFood()
+        getFood()
     }
 
-    let foodList = props.foods.map(item => {
+    let foodList = food.map(item => {
 
         return (
             <div key={item._id}>
