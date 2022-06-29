@@ -10,7 +10,7 @@ const FoodList = (props) => {
     // const restaurant = restaurants[id]
 
     const handleDelete = (e) => {
-        axios.delete(`http://localhost:4040/api/food/${e.target.id}`)
+        axios.delete(`http://localhost:4040/api/food/id/${e.target.id}`)
         props.getFood()
     }
 
