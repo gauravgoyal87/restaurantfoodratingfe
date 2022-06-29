@@ -13,7 +13,6 @@ const FoodList = (props) => {
             if (allFood[i].restaurantName === restName) {
                 setFood(food => [...food, allFood[i]])
             }}
-        // getFood()
     }
     const getFood = () => {
         axios.get('http://localhost:4040/api/food')
@@ -27,7 +26,6 @@ const FoodList = (props) => {
 
     useEffect(() => {
         getFood()
-        // findFood()
     }, [])
 
     useEffect(() => {
@@ -36,7 +34,6 @@ const FoodList = (props) => {
 
     const handleDelete = (e) => {
         axios.delete(`http://localhost:4040/api/food/id/${e.target.id}`)
-        getFood()
     }
 
     let foodList = food.map(item => {
