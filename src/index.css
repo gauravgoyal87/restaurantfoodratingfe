@@ -625,7 +625,7 @@
   width: 100%;
   height: 38%;
   border-radius: 12px;
-  background: url("../../restaurantfoodratingfe/public/imgs/ramen.webp") center;
+  background: url("../public/imgs/ramen.webp") center;
   background-size: cover;
 }
 
