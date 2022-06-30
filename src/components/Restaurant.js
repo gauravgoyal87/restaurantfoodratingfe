@@ -38,7 +38,7 @@ const Restaurant = (props) => {
           <button className="rl-add-button">Z</button>
         </Link>
         <p>DELETE RESTAURANT</p>
-        <Link to="/restaurants" onClick={() => handleDelete()}>
+        <Link to="/restaurants" onClick={handleDelete}>
           <button className="rl-add-button">X</button>
         </Link>
       </div>

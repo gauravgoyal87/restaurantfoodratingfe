@@ -23,7 +23,7 @@ const App = () => {
   useEffect(() => {
     getRes()
     getFood()
-  }, [])
+  }, [rest])
 
   const getRes = () => {
     axios.get('http://localhost:4040/api/restaurant')
