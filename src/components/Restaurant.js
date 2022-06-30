@@ -7,7 +7,7 @@ const Restaurant = (props) => {
   const restName = useParams().restName;
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:4040/api/restaurant/${restName}`);
+    axios.delete(`https://greasespoon2.herokuapp.com/api/restaurant/${restName}`);
     props.getRes();
   };
 

@@ -56,7 +56,7 @@ const AddFood = () => {
   };
 
   const handleSubmit = () => {
-    axios.post("http://localhost:4040/api/food", form).then((res) => {
+    axios.post("https://greasespoon2.herokuapp.com/api/food", form).then((res) => {
       console.log(res.data);
     });
   };

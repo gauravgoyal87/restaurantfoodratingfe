@@ -27,7 +27,7 @@ const EditRestaurant = () => {
 
   const handleSubmit = () => {
     axios
-      .put(`http://localhost:4040/api/restaurant/${restName}`, form)
+      .put(`https://greasespoon2.herokuapp.com/api/restaurant/${restName}`, form)
       .then((res) => {
         console.log(res.data);
       });

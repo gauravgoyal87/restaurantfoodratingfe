@@ -57,7 +57,7 @@ const EditFood = () => {
 
   const handleSubmit = () => {
     axios
-      .put(`http://localhost:4040/api/food/${foodName}`, form)
+      .put(`https://greasespoon2.herokuapp.com/api/food/${foodName}`, form)
       .then((res) => {
         console.log(res.data);
       });

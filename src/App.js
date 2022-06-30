@@ -26,7 +26,7 @@ const App = () => {
   }, [rest])
 
   const getRes = () => {
-    axios.get('http://localhost:4040/api/restaurant')
+    axios.get('https://greasespoon2.herokuapp.com/api/restaurant')
     .then((r) => {
       const rests = r.data
       setRes(rests)
@@ -36,7 +36,7 @@ const App = () => {
   }
 
   const getFood = () => {
-    axios.get('http://localhost:4040/api/food')
+    axios.get('https://greasespoon2.herokuapp.com/api/food')
     .then((r) => {
       const foods = r.data
       setFood(foods)

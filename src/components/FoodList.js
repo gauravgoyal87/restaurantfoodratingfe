@@ -16,7 +16,7 @@ const FoodList = (props) => {
   };
   const getFood = () => {
     axios
-      .get("http://localhost:4040/api/food")
+      .get("https://greasespoon2.herokuapp.com/api/food")
       .then((r) => {
         const foods = r.data;
         setAllFood(foods);
@@ -37,7 +37,7 @@ const FoodList = (props) => {
 
 
   const handleDelete = (e) => {
-    axios.delete(`http://localhost:4040/api/food/id/${e.target.id}`);
+    axios.delete(`https://greasespoon2.herokuapp.com/api/food/id/${e.target.id}`);
     window.location.reload(false);
   };
 
