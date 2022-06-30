@@ -32,7 +32,6 @@ deployment link here
 Form Handlers for adding a food:
 
 `
-
 const [form, setForm] = useState({
     image: "",
     dish: "",
@@ -40,7 +39,8 @@ const [form, setForm] = useState({
     rating: "",
     restaurantName: restName,
   });
-
+  `
+`
   const handleImage = (e) => {
     setForm({
       image: e.target.value,
@@ -50,7 +50,8 @@ const [form, setForm] = useState({
       restaurantName: restName,
     });
   };
-
+  `
+`
   const handleDish = (e) => {
     setForm({
       image: form.image,
@@ -60,7 +61,8 @@ const [form, setForm] = useState({
       restaurantName: restName,
     });
   };
-
+  `
+`
   const handleComment = (e) => {
     setForm({
       image: form.image,
@@ -70,7 +72,8 @@ const [form, setForm] = useState({
       restaurantName: restName,
     });
   };
-
+  `
+`
   const handleRating = (e) => {
     setForm({
       image: form.image,
@@ -80,13 +83,13 @@ const [form, setForm] = useState({
       restaurantName: restName,
     });
   };
-
+  `
+`
   const handleSubmit = () => {
     axios.post("http://localhost:4040/api/food", form).then((res) => {
       console.log(res.data);
     });
   };
-  
 `
 
 ## Unsolved problems
