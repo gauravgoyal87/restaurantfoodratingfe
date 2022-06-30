@@ -94,8 +94,7 @@ const [form, setForm] = useState({
 
 ## Unsolved problems
 
-Deployment
-Refresh issues?
+Deployment and refresh issues? Issues with git and merging files 
 
 
 ## Resources & credits
