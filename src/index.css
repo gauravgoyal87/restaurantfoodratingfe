@@ -531,7 +531,7 @@
   width: 100%;
   height: 38%;
   border-radius: 12px;
-  background: url("../../restaurantfoodratingfe/public/imgs/rc-image.png");
+  background: url("../public/imgs/rc-image.png");
   background-size: cover;
 }
 
