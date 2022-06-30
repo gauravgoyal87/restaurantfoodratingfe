@@ -30,9 +30,11 @@ const FoodList = (props) => {
     getFood();
   }, []);
 
+
   useEffect(() => {
     findFood();
   }, [allFood]);
+
 
   const handleDelete = (e) => {
     axios.delete(`http://localhost:4040/api/food/id/${e.target.id}`);
