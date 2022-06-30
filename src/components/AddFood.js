@@ -43,21 +43,21 @@ const AddFood = () => {
     });
   };
 
-  const handleRating = (e) => {
-    setForm({
-      image: form.image,
-      dish: form.dish,
-      comment: form.comment,
-      rating: e.target.value,
-      restaurantName: restName,
-    });
-  };
+  // const handleRating = (e) => {
+  //   setForm({
+  //     image: form.image,
+  //     dish: form.dish,
+  //     comment: form.comment,
+  //     rating: e.target.value,
+  //     restaurantName: restName,
+  //   });
+  // };
 
-  const handleSubmit = () => {
-    axios.post("http://localhost:4040/api/food", form).then((res) => {
-      console.log(res.data);
-    });
-  };
+  // const handleSubmit = () => {
+  //   axios.post("http://localhost:4040/api/food", form).then((res) => {
+  //     console.log(res.data);
+  //   });
+  // };
 
   // return (
   //   <div>
