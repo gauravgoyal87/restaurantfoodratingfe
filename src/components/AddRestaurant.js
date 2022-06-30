@@ -9,14 +9,14 @@ const AddRestaurant = () => {
 
   const handleName = (e) => {
     setForm({
-      restaurantName: e.target.value,
+      name: e.target.value,
       location: form.location,
     });
   };
 
   const handleLocation = (e) => {
     setForm({
-      restaurantName: form.restaurantName,
+      name: form.name,
       location: e.target.value,
     });
   };
@@ -53,7 +53,7 @@ const AddRestaurant = () => {
           <Link to="/restaurants">
             <button className="ar-cancel">CANCEL</button>
           </Link>
-          <Link to="/:restName/add">
+          <Link to={`/${form.name}/add`}>
             <button className="ar-next" onClick={handleSubmit}>
               NEXT: ADD FOOD
             </button>
