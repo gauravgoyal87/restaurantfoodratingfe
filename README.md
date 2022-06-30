@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Greasy Spoon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app where you can keep track of and rate restaurants you've been to and the dishes you've eaten.
 
-## Available Scripts
+## Wire frame and images
 
-In the project directory, you can run:
+![1e988d41-7811-4a0f-9e16-4f6d0eb9ca15](https://user-images.githubusercontent.com/103523822/176737198-8ad66826-28f2-41b5-b556-1faa0bc8bf0c.png)
 
-### `npm start`
+![0-2](https://user-images.githubusercontent.com/103523822/176737259-a3fb2e61-5563-4bd5-b593-295e4eda461e.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. React.js
+2. CSS
+3. Figma
+4. Axios
 
-### `npm test`
+## Installation instructions:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+deployment link here
 
-### `npm run build`
+## User stories
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As a user, I want to overview information of a restaurant.
+- As a user, I want to update menu with its review.
+- As a user, I want to able to delete a restaurant.
+- As a user, I want to write a comment about the menu.
+- As a user, I want to upload my picture of my meal.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Code Snippet
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Form Handlers for adding a food:
 
-### `npm run eject`
+`
+const [form, setForm] = useState({
+    image: "",
+    dish: "",
+    comment: "",
+    rating: "",
+    restaurantName: restName,
+  });
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  const handleImage = (e) => {
+    setForm({
+      image: e.target.value,
+      dish: form.dish,
+      comment: form.comment,
+      rating: form.rating,
+      restaurantName: restName,
+    });
+  };
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  const handleDish = (e) => {
+    setForm({
+      image: form.image,
+      dish: e.target.value,
+      comment: form.comment,
+      rating: form.rating,
+      restaurantName: restName,
+    });
+  };
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  const handleComment = (e) => {
+    setForm({
+      image: form.image,
+      dish: form.dish,
+      comment: e.target.value,
+      rating: form.rating,
+      restaurantName: restName,
+    });
+  };
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  const handleRating = (e) => {
+    setForm({
+      image: form.image,
+      dish: form.dish,
+      comment: form.comment,
+      rating: e.target.value,
+      restaurantName: restName,
+    });
+  };
 
-## Learn More
+  const handleSubmit = () => {
+    axios.post("http://localhost:4040/api/food", form).then((res) => {
+      console.log(res.data);
+    });
+  };
+`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Unsolved problems
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Deployment
+Refresh issues?
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Resources & credits
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
