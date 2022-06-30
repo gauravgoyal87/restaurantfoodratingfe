@@ -15,7 +15,7 @@ const Restaurant = (props) => {
   return (
     <div className="restaurant-parent">
       <div className="restaurant-title">
-        <p>Whatever name of Restaurant is</p>
+        <p>{restName}</p>
       </div>
       <FoodList
         restaurants={props.restaurants}
