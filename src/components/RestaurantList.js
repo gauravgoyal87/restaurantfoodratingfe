@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const RestaurantList = (props) => {
-  
-    let restaurants = props.restaurants.map(item => {
-        return (
-            <Link key={item._id} to={`/${item.name}`}>
-                <h4>{item.name}</h4>
-                <p>{item.location}</p>
-            </Link>
-        )
-    })
+  let restaurants = props.restaurants.map((item) => {
+    return (
+      <Link key={item._id} to={`/${item.name}`}>
+        <h4>{item.name}</h4>
+        <p>{item.location}</p>
+      </Link>
+    );
+  });
 
   return (
     <div className="rl-parent">
@@ -38,20 +37,7 @@ const RestaurantList = (props) => {
           <button className="rl-add-button">+</button>
         </Link>
       </div>
-
-      <div className="restaurant-card">
-        Don't delete, I'm using this as a test
-        <p className="rc-name" >Restaurant Name</p>
-        <p className="rc-cuisine" >Cuisine</p>
-        <p className="rc-location" >Restaurant Location</p>
-      </div>
-
-      <div className="food-card">
-        Don't delete, I'm using this as a test
-        <p>Restaurant Name</p>
-        <p>Cuisine</p>
-        <p>Restaurant Location</p>
-      </div>
+      
     </div>
   );
 };
