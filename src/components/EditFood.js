@@ -62,13 +62,14 @@ const EditFood = () => {
         console.log(res.data);
       });
   };
-//   return (
-//     <div className="ef-parent">
-//       <div className="ef-title">
-//         <p>Edit Food</p>
-//       </div>
+  //   return (
+  //     <div className="ef-parent">
+  //       <div className="ef-title">
+  //         <p>Edit Food</p>
+  //       </div>
 
-{/* //       <form className="ef-form" action="">
+  {
+    /* //       <form className="ef-form" action="">
 //         <input
 //           type="text"
 //           placeholder="Image"
@@ -104,25 +105,47 @@ const EditFood = () => {
 //         .then(res => {
 //             console.log(res.data)
 //         })
-//     } */}
-      return (
-          <div>
-              <h3>Edit Food</h3>
-              <form action=''>
-                  <input type='text' placeholder='Image' id='image' onChange={handleImage} />
-                  <input type='text' placeholder='Dish' id='dish' onChange={handleDish} />
-                  <input type='text' placeholder='Comment' id='comment' onChange={handleComment} />
-                  <input type='number' placeholder='Rating' id='rating' onChange={handleRating} />
-                  <Link to={`/${restName}`}>
-                      <button onClick={handleSubmit}>Submit</button>
-                  </Link>
-              </form>
-              <Link to={`/${restName}`}>
-                  <button>Back</button>
-              </Link>
-          </div>
-      )
+//     } */
   }
+  return (
+    <div className="ef-parent">
+      <div className="ef-title">
+        <p>Edit Food</p>
+      </div>
 
+      <form className="ef-form" action="">
+        <input
+          type="text"
+          placeholder="Image"
+          id="image"
+          onChange={handleImage}
+        />
+        <input type="text" placeholder="Dish" id="dish" onChange={handleDish} />
+        <input
+          type="text"
+          placeholder="Comment"
+          id="comment"
+          onChange={handleComment}
+        />
+        <input
+          type="number"
+          placeholder="Rating"
+          id="rating"
+          onChange={handleRating}
+        />
+        <div className="ef-buttons">
+          <Link to={`/${restName}`}>
+            <button className="ar-cancel">cancel</button>
+          </Link>
+          <Link to={`/${restName}`}>
+            <button className="ar-next" onClick={handleSubmit}>
+              Submit
+            </button>
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default EditFood;
