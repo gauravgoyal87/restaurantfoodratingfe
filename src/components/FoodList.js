@@ -34,6 +34,7 @@ const FoodList = (props) => {
 
     const handleDelete = (e) => {
         axios.delete(`http://localhost:4040/api/food/id/${e.target.id}`)
+        window.location.reload(false);
     }
 
     let foodList = food.map(item => {
